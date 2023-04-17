@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rejestracja</title>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+      defer
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+      defer
+    ></script>
+    <script src="../script/main.js" defer></script>
+    <style>
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+:root {
+  --clr: #1c3b66;
+}
+body {
+  min-height: 100vh;
+  background: #1c3b66;
+}
+.sm a{
+  color: white;
+}
+.sm{
+  width: 100px;
+  height: 70px;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  text-align: center;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  top: 3px;
+  left: 10px;
+}
+.tt{
+  font-size: 30px;
+  margin: 5px;
+}
+.fb{
+  font-size: 30px;
+  margin: 5px;
+}
+.ig{
+  font-size: 30px;
+  margin: 5px;
+}
+body nav {
+  top: 31px;
+  width: 100%;
+  height: 70px;
+  background: #3066B3;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 10px;
+  padding-right: 25px;
+}
+body nav ul {
+  display: flex;
+  width: 350px;
+}
+body nav ul li {
+  position: relative;
+  list-style: none;
+  width: 70px;
+  height: 70px;
+  z-index: 1;
+}
+body nav ul li a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+}
+body nav ul li a .icon {
+  position: relative;
+  display: block;
+  line-height: 75px;
+  font-size: 1.5em;
+  text-align: center;
+  transition: 0.5s;
+  color: white;
+}
+body nav ul li a .text {
+  position: absolute;
+  color: white;
+  font-weight: 400;
+  font-size: 0.75em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+body nav ul li.active a .icon {
+  transform: translateY(-32px);
+}
+body nav ul li.active a .text {
+  opacity: 1;
+  transform: translateY(10px);
+}
+body nav ul li:nth-child(1).active ~ .indicator {
+  transform: translateX(0px);
+}
+body nav ul li:nth-child(2).active ~ .indicator {
+  transform: translateX(70px);
+}
+body nav ul li:nth-child(3).active ~ .indicator {
+  transform: translateX(140px);
+}
+body nav ul li:nth-child(4).active ~ .indicator {
+  transform: translateX(210px);
+}
+body nav ul li:nth-child(5).active ~ .indicator {
+  transform: translateX(280px);
+}
+body nav .indicator {
+  position: absolute;
+  top: -50%;
+  width: 70px;
+  height: 70px;
+  background: #3A4c66;
+  border-radius: 50%;
+  border: 6px solid var(--clr);
+  transition: 0.5s;
+}
+body nav .indicator::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  border-top-right-radius: 20px;
+  box-shadow: 0px -10px 0 0 var(--clr);
+  background: transparent;
+}
+body nav .indicator::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -22px;
+  width: 20px;
+  height: 20px;
+  border-top-left-radius: 20px;
+  box-shadow: 0px -10px 0 0 var(--clr);
+  background: transparent;
+}
+*,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.background{
+    width: 430px;
+    height: 520px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+}
+.background .shape{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    border-radius: 50%;
+}
+form{
+    height: 800px;
+    width: 400px;
+    background-color: #3A4c66;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 62%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 50px 35px; 
+    cursor: pointer;
+}
+form:hover{
+  transition:1s;
+  box-shadow: 0 0 40px white;
+  background-color: #3066B3;
+  border: 2px solid white;
+  cursor: pointer;
+}
+form *{
+    font-family: 'Poppins',sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+    text-shadow: 1px 2px black;
+}
+form h3{
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+    text-shadow: 1px 2px black;
+}
+label{
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    text-shadow: 1px 2px black;
+}
+input{
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color:white;
+    border: 1px white;
+    border-radius: 10px;
+    padding: 0 10px;
+    margin-top: 5px;
+    font-size: 14px;
+    background-color: black;
+    font-weight: 300;
+}
+button{
+    margin-top: 50px;
+    width: 100%;
+    background-color:#1c3b66;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.Zs{
+  width: 134px;
+  height: 33px;
+  color: white;
+  border: 2px solid white;
+  background-color: #3066B3;
+  border-radius: 10px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  margin: auto;
+  margin-top: 70px;
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+#copyright{
+  color: white;
+  cursor: pointer;
+  font-weight: bolder;
+  text-align: center;
+  width: 100%;
+  height: 92px;
+  font-size: 18px;
+  padding-top: 20px;
+  margin-top: 49%;
+  background-color: #3066B3;
+}
+</style>
+</head>
+<body>
+    <nav>
+        <div class="sm">
+          <div class="tt"><a href="https://twitter.com" target="_blank"><ion-icon name="logo-twitter"></a></ion-icon></a></div>
+          <span class="fb"><a href="https://facebook.com" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a></span>
+          <span class="ig"><a href="https://instagram.com" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a></span>
+        </div>
+        <ul>
+          <li class="list">
+            <a href="HOME.html">
+              <span class="icon">
+                <ion-icon name="home-outline"></ion-icon>
+              </span>
+              <span class="text">HOME</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="ONAS.html"> 
+              <span class="icon">
+                <ion-icon name="school-outline"></ion-icon>
+              </span>
+              <span class="text">O SZKOLE</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="SUKCESY.html">
+              <span class="icon"
+                ><ion-icon name="trophy-outline"></ion-icon></span>
+              <span class="text">SUKCESY</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="GALERIA.html"> 
+              <span class="icon"
+                ><ion-icon name="images-outline"></ion-icon></span>
+              <span class="text">GALERIA</span>
+            </a>
+          </li>
+          <li class="list active">
+            <a href="KONTAKT.html">
+              <span class="icon"
+                ><ion-icon name="chatbubbles-outline"></ion-icon></span>
+              <span class="text">LOGOWANIE</span>
+            </a>
+          </li>
+          <div class="indicator"></div>
+        </ul>
+      </nav>
+
+      <div class="Zs"><a href="LOGOWANIE.html">Zaloguj się!</a></div>
+
+      <form>
+        <h3>Zarejestruj się!</h3>
+
+        <label for="username">Imię</label>
+        <span><ion-icon name="body-outline"></ion-icon></span><input type="text" placeholder="Imię" id="username">
+
+        <label for="password">Nazwisko</label>
+        <span><ion-icon name="bicycle-outline"></ion-icon></span><input type="password" placeholder="Nazwisko" id="password">
+
+        <label for="username">Login</label>
+        <span><ion-icon name="person-circle-outline"></ion-icon></span><input type="text" placeholder="login" id="username">
+
+        <label for="password">Hasło</label>
+        <span><ion-icon name="lock-closed-outline"></ion-icon></span><input type="password" placeholder="hasło" id="password">
+
+        <label for="password">E-mail</label>
+        <span><ion-icon name="mail-unread-outline"></ion-icon></span><input type="email" placeholder="e-mail" id="password">
+
+        <button id="buton">Sign up</button>    
+      </form>
+
+      <div id="copyright"> COPYRIGHT | MATEUSZ KONIK© 2023</div>
+</body>
+</html>

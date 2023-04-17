@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+      defer
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+      defer
+    ></script>
+    <script src="../script/main.js" defer></script>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+:root {
+  --clr: #1c3b66;
+}
+.sm a{
+  color: white;
+}
+body {
+  min-height: 100vh;
+  background: #1c3b66;
+}
+.sm{
+  width: 100px;
+  height: 70px;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  text-align: center;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  top: 3px;
+  left: 10px;
+}
+.tt{
+  font-size: 30px;
+  margin: 5px;
+}
+.fb{
+  font-size: 30px;
+  margin: 5px;
+}
+.ig{
+  font-size: 30px;
+  margin: 5px;
+}
+body nav {
+  top: 31px;
+  width: 100%;
+  height: 70px;
+  background: #3066B3;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 10px;
+  padding-right: 15px;
+}
+body nav ul {
+  display: flex;
+  width: 350px;
+}
+body nav ul li {
+  position: relative;
+  list-style: none;
+  width: 70px;
+  height: 70px;
+  z-index: 1;
+}
+body nav ul li a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+}
+body nav ul li a .icon {
+  position: relative;
+  display: block;
+  line-height: 75px;
+  font-size: 1.5em;
+  text-align: center;
+  transition: 0.5s;
+  color: white;
+}
+body nav ul li a .text {
+  position: absolute;
+  color: white;
+  font-weight: 400;
+  font-size: 0.75em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+body nav ul li.active a .icon {
+  transform: translateY(-32px);
+}
+body nav ul li.active a .text {
+  opacity: 1;
+  transform: translateY(10px);
+}
+body nav ul li:nth-child(1).active ~ .indicator {
+  transform: translateX(0px);
+}
+body nav ul li:nth-child(2).active ~ .indicator {
+  transform: translateX(70px);
+}
+body nav ul li:nth-child(3).active ~ .indicator {
+  transform: translateX(140px);
+}
+body nav ul li:nth-child(4).active ~ .indicator {
+  transform: translateX(210px);
+}
+body nav ul li:nth-child(5).active ~ .indicator {
+  transform: translateX(280px);
+}
+body nav .indicator {
+  position: absolute;
+  top: -50%;
+  width: 70px;
+  height: 70px;
+  background: #3A4c66;
+  border-radius: 50%;
+  border: 6px solid var(--clr);
+  transition: 0.5s;
+}
+body nav .indicator::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  border-top-right-radius: 20px;
+  box-shadow: 0px -10px 0 0 var(--clr);
+  background: transparent;
+}
+body nav .indicator::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -22px;
+  width: 20px;
+  height: 20px;
+  border-top-left-radius: 20px;
+  box-shadow: 0px -10px 0 0 var(--clr);
+  background: transparent;
+}
+#copyright{
+  color: white;
+  cursor: pointer;
+  font-weight: bolder;
+  text-align: center;
+  width: 100% !important;
+  height: 60px;
+  font-size: 18px;
+  padding-top: 20px;
+  background-color: #3066B3;
+}
+
+
+.container
+{
+    position: relative;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 1000px;
+    background: #3066B3;
+    color: white;
+    margin: auto;
+    margin-top: 50px;
+    box-shadow: 0 50px 75px rgba(0,0,0,0.1);
+}
+span{
+  color: white;
+}
+ul{
+  color: white;
+}
+.container .top
+{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 40px;
+    padding-bottom: 0;
+    color: white;
+}
+.container .top .imgBx
+{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.container .top .imgBx .box
+{
+    position: relative;
+    width: 70%;
+    min-width: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    aspect-ratio: 1;
+}
+.container .top .imgBx .box img
+{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.container .top .profileText
+{
+    position: relative;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+}
+.container .top .profileText h3
+{
+    font-size: 3em;
+    letter-spacing: 0.1em;
+    line-height: 1.2em;
+    font-weight: 600;
+    color: #1c3b66;
+}
+.container .top .profileText h3 span
+{
+    position: relative;
+    font-size: 0.5em;
+    font-weight: 300;
+    top: -10px;
+}
+.container .contentBox
+{
+    position: relative;
+    min-height: 500px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 0 40px 40px;
+}
+.container .contentBox h3
+{
+    border-left: 4px solid #1c3b66;
+    padding-left: 10px;
+    line-height: 1em;
+    font-weight: 600;
+    color: #333;
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+.container .contentBox ul
+{
+    position: relative;
+    margin: 10px 0;
+}
+.container .contentBox ul li
+{
+    list-style: none;
+    margin: 25px 0;
+    line-height: 1em;
+    color: #1c3b66;
+    cursor: pointer;
+    display: flex;
+}
+.container .contentBox ul li ion-icon
+{
+    font-size: 1.2em;
+    margin-right: 10px;
+    color: #1c3b66;
+}
+.container .contentBox ul.education li
+{
+    flex-direction: column;
+    margin: 25px;
+}
+h3{
+  color: white !important;
+}
+h5
+{
+    color: white;
+}
+h4
+{
+  color: white;
+    font-weight: 500;
+    margin: 5px 0;
+}
+h6
+{
+  color: white;
+    font-weight: 300;
+    font-size: 1em;
+}
+.language li
+{
+    flex-direction: column;
+}
+.language li span
+{
+  color: white;
+    font-size: 16px;
+    font-weight: 500;
+}
+.language .percent
+{
+    position: relative;
+    width: 100%;
+    background: #1c3b66;
+    height: 6px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    display: block;
+    overflow: hidden;
+}
+.language .percent div
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: white;
+}
+.container .contentBox ul.interest
+{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: white;
+}
+.container .contentBox ul.interest li
+{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+    color: white;
+}
+.container .contentBox ul.interest li .icon
+{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: #1c3b66;
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .contentBox ul.interest li .icon ion-icon
+{
+    color: white;
+    margin-right: 0;
+}
+p
+{
+    font-style: 300;
+}
+.rightSide
+{
+    padding-left: 40px;
+}
+.about .box
+{
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0;
+}
+.about .box .year_company
+{
+    min-width: 150px;
+    margin-bottom: 10px;
+}
+.about .box .year_company h5
+{
+    color: white;
+    font-weight: 600;
+}
+.about .box .year_company h5:nth-child(1)
+{
+    color: #1c3b66;
+}
+.about .box .text h4
+{
+    color: #1c3b66;
+    font-weight: 16px;
+    margin: 0;
+}
+.about.skills .box
+{
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    justify-content: center;
+    align-items: center;
+}
+.about.skills .box h4
+{
+    color: white;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.about.skills .box .percent
+{
+    position: relative;
+    width: 100%;
+    height: 10px;
+    background: #1c3b66;
+}
+.about.skills .box .percent div
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: white;
+}
+</style>
+</head>
+<body>
+    <nav>
+        <div class="sm">
+          <div class="tt"><a href="https://twitter.com" target="_blank"><ion-icon name="logo-twitter"></a></ion-icon></a></div>
+          <span class="fb"><a href="https://facebook.com" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a></span>
+          <span class="ig"><a href="https://instagram.com" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a></span>
+        </div>
+        <ul>
+          <li class="list">
+            <a href="HOME.html">
+              <span class="icon">
+                <ion-icon name="home-outline"></ion-icon>
+              </span>
+              <span class="text">HOME</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="ONAS.html"> 
+              <span class="icon">
+                <ion-icon name="school-outline"></ion-icon>
+              </span>
+              <span class="text">O SZKOLE</span>
+            </a>
+          </li>
+          <li class="list active">
+            <a href="KONTAKT.html">
+              <span class="icon"
+                ><ion-icon name="call-outline"></ion-icon></span>
+              <span class="text">KONTAKT</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="GALERIA.html"> 
+              <span class="icon"
+                ><ion-icon name="images-outline"></ion-icon></span>
+              <span class="text">GALERIA</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="LOGOWANIE.html">
+              <span class="icon"
+                ><ion-icon name="chatbubbles-outline"></ion-icon></span>
+              <span class="text">LOGOWANIE</span>
+            </a>
+          </li>
+          <div class="indicator"></div>
+        </ul>
+      </nav>
+
+      <br>
+<div class="container">
+        <div class="top">
+            <div class="imgBx">
+                <div class="box">
+                    <img src="../css/hteacher.jpg">
+                </div>
+            </div>
+            <div class="profileText">
+               <h3>Mateusz<br>Konik<br><span>DYREKTOR SP1</span></h3> 
+        </div>
+    </div>
+    <div class="contentBox">
+        <div class="leftSide">
+            <h3>Kontakt</h3>
+            <ul>
+                <li>
+                    <span class="icon"><ion-icon name="call-outline"></ion-icon></span>
+                    <span class="text">+48-123-456-789</span>
+                </li>
+                <li>
+                    <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                    <span class="text">konikmateusz@gmail.com</span>
+                </li>
+                <li>
+                    <span class="icon"><ion-icon name="earth-outline"></ion-icon></span>
+                    <span class="text">www.SP1Krakowedu.com</span>
+                </li>
+                <li>
+                    <span class="icon"><ion-icon name="earth-outline"></ion-icon></span>
+                    <span class="text">Kraków, Polska</span>
+                </li>
+            </ul>
+            <h3>Wykształcenie</h3>
+            <ul class="education">
+                <li>
+                    <h5>2002 - 2007</h5>
+                    <h4>Wykształcenie wyższe</h4>
+                    <h6>Uniwersytet Jagielloński</h6>
+                </li>
+                <li>
+                    <h5>1997 - 2002</h5>
+                    <h4>Wykształcenie średnie</h4>
+                    <h6>XV Liceum Ogólnokształcące w Krakowie</h6>
+                </li>
+                <li>
+                    <h5>1989 - 1997</h5>
+                    <h4>Wykształcenie podstawowe</h4>
+                    <h6>Szkoła Podstawowa w Łazanach</h6>
+                </li>
+            </ul>
+            <h3>Języki</h3>
+            <ul class="language">
+                <li>
+                    <span class="text">Polski</span>
+                    <span class="percent">
+                        <div style="width: 100%;"></div>
+                    </span>
+                </li>
+                <li>
+                    <span class="text">Angielski</span>
+                    <span class="percent">
+                        <div style="width: 90%;"></div>
+                    </span>
+                </li>
+                <li>
+                    <span class="text">Hiszpański</span>
+                    <span class="percent">
+                        <div style="width: 50%;"></div>
+                    </span>
+                </li>
+                <li>
+                    <span class="text">Włoski</span>
+                    <span class="percent">
+                        <div style="width: 20%;"></div>
+                    </span>
+                </li>
+            </ul>
+            <h3>Zainteresowania</h3>
+            <ul class="interest">
+              <li><span class="icon"><ion-icon name="car-sport-outline"></ion-icon></span>Motoryzacja</li>
+              <li><span class="icon"><ion-icon name="book-outline"></ion-icon></span>Książki</li>
+              <li><span class="icon"><ion-icon name="football-outline"></ion-icon></span>Piłka nożna<hr></li>
+              <li><span class="icon"><ion-icon name="desktop-outline"></ion-icon></span>Informatyka</li>
+            </ul>
+        </div>
+
+        <div class="rightSide">
+            <div class="about">
+                <h3>Profil</h3>
+                <p>
+                  Jestem dyplomowanym nauczycielem języka polskiego z ponad 10-letnim stażem pracy w liceum ogólnokształcącym. Od ponad 10 lat jestem dyrektorem tej szkoły. W 2015 z własnej inicjatywy przygotowałem i wdrożyłem wewnątrzszkolną Kartę dobrych praktyk nauczycielskich, która pomogła złagodzić konflikty wśród kadry pedagogicznej oraz lepiej zorganizować pracę nauczycieli. Na stanowisku dyrektora w Szkole podstawowej im. Jana Kowalskiego nr 1 w Krakowie zajmuję się unowocześnianiem wewnątrzszkolnego systemu edukacji w celu pomocy naszym wybitnym podopiecznym oraz typowymi zadaniami dyrektorskimi.
+                </p>
+            </div>
+
+        <div class="about">
+            <h3>Doświadczenie</h3>
+            <div class="box">
+                <div class="year_company">
+                <h5>2003 - 2013</h5>
+                <h5>Nauczyciel języka polskiego.</h5>
+            </div>
+            <div class="text">
+                <h4>Praca w XV Liceum Ogólnokształcącym.</h4>
+                <p></p>
+            </div>
+        </div>
+            <div class="box">
+                <div class="year_company">
+                <h5>2013 - dalej</h5>
+                <h5>Dyrektor</h5>
+            </div>
+            <div class="text">
+                <h4>Dyrektor SP1</h4>
+                <p></p>
+            </div>
+        </div>
+        </div>
+        <div class="about skills">
+            <h3>Umiejętności</h3>
+            <div class="box">
+                <h4>Zarządzanie</h4>
+                <span class="percent">
+                    <div style="width: 100%;"></div>
+                </span>
+            </div>
+            <div class="box">
+                <h4>Panowanie nad stresem</h4>
+                <span class="percent">
+                    <div style="width: 70%;"></div>
+                </span>
+            </div>
+            <div class="box">
+                <h4>Samodyscyplina</h4>
+                <span class="percent">
+                    <div style="width: 90%;"></div>
+                </span>
+            </div>
+            <div class="box">
+                <h4>Asertywność</h4>
+                <span class="percent">
+                    <div style="width: 75%;"></div>
+                </span>
+            </div>
+            <div class="box">
+                <h4>Koncentracja na celu</h4>
+                <span class="percent">
+                    <div style="width: 100%;"></div>
+                </span>
+            </div>
+            <div class="box">
+                <h4>Samodzielność</h4>
+                <span class="percent">
+                    <div style="width: 100%;"></div>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<br>  <br>
+
+
+
+<div id="copyright"> COPYRIGHT | MATEUSZ KONIK© 2023</div>
+
+
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

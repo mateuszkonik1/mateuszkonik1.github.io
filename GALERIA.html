@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GALERIA</title>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+      defer
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+      defer
+    ></script>
+    <script src="../script/main.js" defer></script>
+
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+:root {
+  --clr: #1c3b66;
+}
+.sm a{
+  color: white;
+}
+body {
+  min-height: 100vh;
+  background: #1c3b66;
+}
+.sm{
+  width: 100px;
+  height: 70px;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  text-align: center;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  top: 3px;
+  left: 10px;
+}
+.tt{
+  font-size: 30px;
+  margin: 5px;
+}
+.fb{
+  font-size: 30px;
+  margin: 5px;
+}
+.ig{
+  font-size: 30px;
+  margin: 5px;
+}
+body nav {
+  top: 31px;
+  width: 100%;
+  height: 70px;
+  background: #3066B3;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 10px;
+  padding-right: 15px;
+}
+body nav ul {
+  display: flex;
+  width: 350px;
+}
+body nav ul li {
+  position: relative;
+  list-style: none;
+  width: 70px;
+  height: 70px;
+  z-index: 1;
+}
+body nav ul li a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+}
+body nav ul li a .icon {
+  position: relative;
+  display: block;
+  line-height: 75px;
+  font-size: 1.5em;
+  text-align: center;
+  transition: 0.5s;
+  color: white;
+}
+body nav ul li a .text {
+  position: absolute;
+  color: white;
+  font-weight: 400;
+  font-size: 0.75em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+body nav ul li.active a .icon {
+  transform: translateY(-32px);
+}
+body nav ul li.active a .text {
+  opacity: 1;
+  transform: translateY(10px);
+}
+body nav ul li:nth-child(1).active ~ .indicator {
+  transform: translateX(0px);
+}
+body nav ul li:nth-child(2).active ~ .indicator {
+  transform: translateX(70px);
+}
+body nav ul li:nth-child(3).active ~ .indicator {
+  transform: translateX(140px);
+}
+body nav ul li:nth-child(4).active ~ .indicator {
+  transform: translateX(210px);
+}
+body nav ul li:nth-child(5).active ~ .indicator {
+  transform: translateX(280px);
+}
+body nav .indicator {
+  position: absolute;
+  top: -50%;
+  width: 70px;
+  height: 70px;
+  background: #3A4c66;
+  border-radius: 50%;
+  border: 6px solid var(--clr);
+  transition: 0.5s;
+}
+body nav .indicator::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  border-top-right-radius: 20px;
+  box-shadow: 0px -10px 0 0 var(--clr);
+  background: transparent;
+}
+body nav .indicator::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -22px;
+  width: 20px;
+  height: 20px;
+  border-top-left-radius: 20px;
+  box-shadow: 0px -10px 0 0 var(--clr);
+  background: transparent;
+}
+.miniobr{
+  width: 1630px;
+  height: 1250px;
+
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 0px;
+  cursor: pointer;
+  margin-top: 70px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+.sale{
+  width: 480px;
+  height: 360px;
+  background-image: url(../css/1.jpg);
+  border-radius: 10px;
+  margin-right: 30px;
+  margin-left: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.sale1{
+  width: 480px;
+  height: 360px;
+  background-image: url(../css/2.jpg);
+  border-radius: 10px;
+  margin-right: 30px;
+  margin-left: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.sale2{
+  width: 480px;
+  height: 360px;
+  background-image: url(../css/3.jpg);
+  border-radius: 10px;
+  margin-right: 30px;
+  margin-left: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.sale3{
+  width: 480px;
+  height: 360px;
+  background-image: url(../css/4.jfif);
+  border-radius: 10px;
+  margin-right: 30px;
+  margin-left: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.sale4{
+  width: 480px;
+  height: 360px;
+  background-image: url(../css/5.jpg);
+  border-radius: 10px;
+  margin-right: 30px;
+  margin-left: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.sale5{
+  width: 480px;
+  height: 360px;
+  background-image: url(../css/6.jfif);
+  border-radius: 10px;
+  margin-right: 30px;
+  margin-left: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.sale6{
+  width: 480px;
+  height: 360px;
+  background-image: url(../css/7.jpg);
+  border-radius: 10px;
+  margin-right: 30px;
+  margin-left: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.sale7{
+  width: 480px;
+  height: 360px;
+  background-image: url(../css/8.jpg);
+  border-radius: 10px;
+  margin-right: 30px;
+  margin-left: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.sale8{
+  width: 480px;
+  height: 360px;
+  background-image: url(../css/books-2596809_960_720.jpg);
+  border-radius: 10px;
+  margin-right: 30px;
+  margin-left: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#saletxt{
+  width: 480px;
+  height: 360px;
+  opacity: 0;
+  color: white;
+}
+#saletxt:hover{
+  transition: 0.5s;
+  background-color: black;
+  opacity: 75%;
+  padding-top: 170px;
+  text-align: center;
+  border-radius: 10px;
+}
+.sponsor{
+  width: 200px;
+  height: 1160px;
+  background-color: white;
+  border-radius: 10px;
+  margin-left: 1650px;
+  margin-top: -1230px;
+}
+#s1{
+  width: 200px;
+  height: 150px;
+  margin-bottom: 50px;
+  box-sizing: border-box;
+  background-image: url(../css/LG.png);
+}
+#s1:hover{
+  width: 170px;
+  height: 120px;
+  transform: scale(0.9);
+  transition: 1s ease-out;
+  cursor: pointer;
+}
+#s2{
+  width: 200px;
+  height: 150px;
+  margin-bottom: 50px;
+  margin-bottom: 50px;
+  background-image: url(../css/cisco.jfif);
+}
+#s2:hover{
+  width: 170px;
+  height: 120px;
+  transform: scale(0.9);
+  transition: 1s ease-out;
+  cursor: pointer;
+}
+#s3{
+  width: 200px;
+  height: 150px;
+  margin-bottom: 50px;
+  background-image: url(../css/agh.png);
+  background-repeat: no-repeat;
+}
+#s3:hover{
+  width: 170px;
+  height: 120px;
+  transform: scale(0.9);
+  transition: 1s ease-out;
+  cursor: pointer;
+  background-repeat: no-repeat;
+}
+#s4{
+  width: 200px;
+  height: 150px;
+  margin-bottom: 50px;
+  background-image: url(../css/Premier-League.png);
+}
+#s4:hover{
+  width: 170px;
+  height: 120px;
+  transform: scale(0.9);
+  transition: 1s ease-out;
+  cursor: pointer;
+}
+#s5{
+  width: 200px;
+  height: 150px;
+  margin-bottom: 50px;
+  background-image: url(../css/google.jpg);
+}
+#s5:hover{
+  width: 170px;
+  height: 120px;
+  transform: scale(0.9);
+  transition: 1s ease-out;
+  cursor: pointer;
+}
+#s6{
+  width: 200px;
+  height: 150px;
+  background-image: url(../css/R.png);
+}
+#s6:hover{
+  width: 170px;
+  height: 120px;
+  transform: scale(0.9);
+  transition: 1s ease-out;
+  cursor: pointer;
+}
+#copyright{
+  color: white;
+  cursor: pointer;
+  font-weight: bolder;
+  text-align: center;
+  position: static;
+  width: 100%;
+  height: 60px;
+  font-size: 18px;
+  padding-top: 20px;
+  margin-top: 60px;
+  background-color: #3066B3;
+}
+</style>
+</head>
+<body>
+    <nav>
+        <div class="sm">
+          <div class="tt"><a href="https://twitter.com" target="_blank"><ion-icon name="logo-twitter"></a></ion-icon></a></div>
+          <span class="fb"><a href="https://facebook.com" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a></span>
+          <span class="ig"><a href="https://instagram.com" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a></span>
+        </div>
+        <ul>
+          <li class="list">
+            <a href="HOME.html">
+              <span class="icon">
+                <ion-icon name="home-outline"></ion-icon>
+              </span>
+              <span class="text">HOME</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="ONAS.html"> 
+              <span class="icon">
+                <ion-icon name="school-outline"></ion-icon>
+              </span>
+              <span class="text">O SZKOLE</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="KONTAKT.html">
+              <span class="icon"
+                ><ion-icon name="call-outline"></ion-icon></span>
+              <span class="text">KONTAKT</span>
+            </a>
+          </li>
+          <li class="list active">
+            <a href="GALERIA.html"> 
+              <span class="icon"
+                ><ion-icon name="images-outline"></ion-icon></span>
+              <span class="text">GALERIA</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="LOGOWANIE.html">
+              <span class="icon"
+                ><ion-icon name="chatbubbles-outline"></ion-icon></span>
+              <span class="text">LOGOWANIE</span>
+            </a>
+          </li>
+          <div class="indicator"></div>
+        </ul>
+      </nav>
+
+      <div class="miniobr">
+        <div class="sale"><div id="saletxt">Nasz budynek ze strony wschodniej :).</div></div>
+        <div class="sale1"><div id="saletxt">Szkolne kółko teatralne.</div></div>
+        <div class="sale2"><div id="saletxt">Front szkoły.</div></div>
+        <div class="sale3"><div id="saletxt">Rysunek naszej szkoły wykonany przez ucznia klasy 1.</div></div>
+        <div class="sale4"><div id="saletxt">Hala sportowa w naszej szkole.</div></div>
+        <div class="sale5"><div id="saletxt">Rysunek techniczny jednej z klas wykonany przez ucznia klasy 6.</div></div>
+        <div class="sale6"><div id="saletxt">Boiska wielofunkcyjne.</div></div>
+        <div class="sale7"><div id="saletxt">Nowe szafki dla naszych uczniów.</div></div>
+        <div class="sale8"><div id="saletxt">Biblioteka w naszej szkole otrzymała nowe wydania lektur obowiązkowych.</div></div>
+      </div>
+  
+      <div class="sponsor">
+        <div id="s1"></div>
+        <div id="s2"></div>
+        <div id="s3"></div>
+        <div id="s4"></div>
+        <div id="s5"></div>
+        <div id="s6"></div>
+      </div>
+
+    <div id="copyright"> COPYRIGHT | MATEUSZ KONIK© 2023</div>
+
+
+</body>
+</html>
